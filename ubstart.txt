@@ -1,11 +1,27 @@
 #!/bin/bash
 #Automating much of the hardening proccess for a Ubuntu System
 
-sudo useradd mark
-sudo useradd loud2
-sudo useradd loud3
-sudo useradd loud4
+sudo useradd loud
 
-sudo wget https://raw.githubusercontent.com/mswishe7/Scripts/master/changepassub.txt
 sudo chmod +x changepassub.txt
-sudo ./changepassub.txt loudloud
+sudo ./changepasssub.txt $1
+
+cat /etc/passwd | grep sh
+
+if [ -d "$/etc/vsftpd" ];
+then
+  mkdir copyvsftpd
+  cp /etc/vsftpd copyvsftpd
+  cp good_vsftpd.conf /etc/vsftpd/vsfrpd.conf #Copy over the correct configure file
+  sudo service vsftpd restart
+fi
+
+if [ -d "$/etc/ssh" ];
+then
+  mkdir copyssh
+  cp /etc/ssh copyssh
+  cp good_vsftpd.conf /etc/vsftpd/vsfrpd.conf #Copy over the correct configure file
+fi
+
+
+sudo service sshd restart
