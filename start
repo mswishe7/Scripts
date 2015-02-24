@@ -1,0 +1,4 @@
+#!/bin/bash
+
+scp -r /home/loud/go $1@$2:~
+ssh $1@$2 "chmod +x ~/go/ubstart.txt; sudo ./ubstart.txt $3"
