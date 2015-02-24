@@ -1,0 +1,7 @@
+mkdir stuff
+cd stuff
+
+#Download all of the needed scripts and config files
+wget https://raw.githubusercontent.com/mswishe7/Scripts/master/changepassub.txt
+
+
