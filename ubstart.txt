@@ -1,0 +1,11 @@
+#!/bin/bash
+#Automating much of the hardening proccess for a Ubuntu System
+
+sudo useradd mark
+sudo useradd loud2
+sudo useradd loud3
+sudo useradd loud4
+
+sudo wget https://github.com/mswishe7/Scripts/blob/master/changepassub.txt
+sudo chmod +x changepassub.txt
+sudo ./changepassub.txt loudloud
