@@ -1,0 +1,9 @@
+#!/bin/bash
+#Download and install Busybox
+
+curl -o ~/busybox 'http://busybox.net/downloads/binaries/latest/busybox-i686'
+chmod 700 busybox;done
+
+
+
+

@@ -1,0 +1,5 @@
+#!/bin/bash
+#Ssh into a computer and change the password on an account
+
+ssh ubuntu@10.0.0.91 "sudo echo ubuntu:southhwt75 | sudo chpasswd"
+
