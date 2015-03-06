@@ -1,9 +1,11 @@
 #!/bin/bash
 
+#Checks for crons running under all users. If there is one, it prints out the user and the cron.
+
 for user in `cat /etc/passwd | cut -d ":" -f 1`; do
-cron=$(sudo -u $user crontab -l 2> /dev/null| grep -v "#")
-if [ "$cron" ]; then
-echo "$user"
-echo "$cron"
-fi
+	cron=$(sudo -u $user crontab -l 2> /dev/null| grep -v "#")
+	if [ "$cron" ]; then
+		echo "$user"
+		echo "$cron"
+	fi
 done
