@@ -1,4 +1,4 @@
 #!/bin/bash
 
 mysqldump -u root -p --all-databases > backup.sql
-scp backup.sql $1@$2:/home/test
+scp backup.sql $1@$2:/home/$1
