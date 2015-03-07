@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#Usage: ./sshcommand <user> <host> <command>
+
+BB=/bin/busybox
+
+if [ "$#" -lt 3 ];then
+	echo "Usage: ./sshcommand <user> <host> <command>"
+	exit 1
+fi
+if [ -z "$SSHPASS" ];then
+	echo "SSHPASS Environment variable not set. Enter Password:"
+	read -s password
+	export SSHPASS=${password}
+fi
+
+sshpass -e scp ${BB} $1@$2:
+sshpass -e ssh $1@$2 ./busybox $3
+sshpass -e ssh $1@$2 ./busybox rm -f ./busybox
+
+

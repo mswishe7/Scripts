@@ -1,0 +1,3 @@
+#!/bin/bash
+
+for users in `cat /etc/passwd | cut -d":" -f1`;do echo -e "$users" && sudo crontab -u $users -l && echo " "; done

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo -e "Current Root Users:\n`cat /etc/passwd | grep 0:0`"
