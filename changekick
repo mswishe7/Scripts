@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#Usage: ./changekick <User to Kick 'pts/19'>
+
+if [ "$#" -lt 1 ];
+then
+	echo "Usage: ./changekick <IP_To_Kick>"
+	exit 1
+fi
+
+if [ -z "$newpass" ];
+then
+	echo " NEWPASS Environment variable not set. Enter Password:"
+	read -s password
+	export newpass=${password}
+fi
+
+for user in `cat /etc/passwd | grep bash | cut -d":" -f1`;do echo -e "${newpass}\n${newpass}" | (passwd $user);done
+sudo kill -9 `ps aux | grep ssh | grep $1 | awk '{print $2}'`
+
+
+
