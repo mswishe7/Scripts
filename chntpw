@@ -1,3 +1,5 @@
+#/bin/bash
+
 wget launchpadlibrarian.net/15221455/chntpw_0.99.5-0+nmu1_i386.deb
 sudo dpkg -i chntpw_0.99.5-0+nmu1_i386.deb 
 sudo apt-get install -f
